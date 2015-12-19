@@ -31,7 +31,7 @@ rst = rst.find_all('div',{'class':'row'})
 
 for r in rst:
     try:
-        text = 'Facebook API + Beautifulsoup\n\nWeb Crawling and Publishing test\n'
+        text = 'Facebook API + Beautifulsoup\n\nWeb Scraping and Publishing test\n'
         link = (url + (((r.find_all('a',{'class':'imageLinkWrapper'}))[0]).get('href')))
         img = (((r.find_all('img'))[1]).get('src'))
         title = ((((r.find_all('h3'))[0]).text).strip())
