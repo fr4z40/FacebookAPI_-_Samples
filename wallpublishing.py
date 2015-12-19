@@ -29,21 +29,25 @@ html_sample = source(url)
 rst = ((((html_sample.find_all('div',{'class':'fdListingContainer'}))[0]).find_all('div'))[0])
 rst = rst.find_all('div',{'class':'row'})
 
-for r in rst:
-    try:
-        text = 'Facebook API + Beautifulsoup\n\nWeb Scraping and Publishing test\n'
-        link = (url + (((r.find_all('a',{'class':'imageLinkWrapper'}))[0]).get('href')))
-        img = (((r.find_all('img'))[1]).get('src'))
-        title = ((((r.find_all('h3'))[0]).text).strip())
-        desc = (((r.find_all('p')[0]).text).strip())
-        caption = (((r.find_all('span',{'class':'assetAuthor'})[0]).text).strip())
+def main():
+    for r in rst:
+        try:
+            text = 'Facebook API + Beautifulsoup\n\nWeb Scraping and Publishing test\n'
+            link = (url + (((r.find_all('a',{'class':'imageLinkWrapper'}))[0]).get('href')))
+            img = (((r.find_all('img'))[1]).get('src'))
+            title = ((((r.find_all('h3'))[0]).text).strip())
+            desc = (((r.find_all('p')[0]).text).strip())
+            caption = (((r.find_all('span',{'class':'assetAuthor'})[0]).text).strip())
 
-       # ------------------------------------------------ #
-        wall_post(text, title, link, caption, desc, img)  #
-       # ------------------------------------------------ #
+            # ------------------------------------------------ #
+             wall_post(text, title, link, caption, desc, img)  #
+            # ------------------------------------------------ #
 
-        print('Published: %s' % title)
-        sleep(60)
+            print('Published: %s' % title)
+            sleep(60)
 
-    except:
-        pass
+        except:
+            pass
+
+if __name__ == '__main__':
+    main()
