@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# Author: Eduardo Frazão ( http://github.com/fr4z40 )
+# Author: Eduardo Frazão
+#   * http://github.com/fr4z40
+#   * https://bitbucket.org/fr4z40
 
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as bsp
